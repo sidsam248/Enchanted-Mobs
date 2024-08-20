@@ -1,0 +1,4 @@
+name: Enchanted_Mobs
+version: '0.1'
+main: me.sidsam.com.enchanted_mobs.Main
+api-version: '1.21'
