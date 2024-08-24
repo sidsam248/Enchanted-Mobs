@@ -1,4 +1,5 @@
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\Ability.java
+D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\Backstab.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\BlazeShield.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\Bloodlust.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\DarkBolt.java
@@ -12,8 +13,10 @@ D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_m
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\LifeDrain.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\Radiance.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\RaiseUndead.java
+D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\ShadowStep.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\SoulHarvest.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\SummonMinions.java
+D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\abilities\Vanish.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\entities\Assassin.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\entities\Berserker.java
 D:\Java Projects New 2024\Enchanted Mobs\src\main\java\me\sidsam\com\enchanted_mobs\entities\EnchantedMob.java

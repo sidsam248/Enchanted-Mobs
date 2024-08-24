@@ -25,15 +25,12 @@ public final class Main extends JavaPlugin {
     }
 
     private void initializeMobClasses() {
-        // Yet to finish
-//        enchantedMobClasses.add(Assassin.class);
+        enchantedMobClasses.add(Assassin.class);
         enchantedMobClasses.add(Paladin.class);
-
-        // Finished
-//        enchantedMobClasses.add(Berserker.class);
-//        enchantedMobClasses.add(Necromancer.class);
-//        enchantedMobClasses.add(Pyromancer.class);
-//        enchantedMobClasses.add(Warlock.class);
+        enchantedMobClasses.add(Berserker.class);
+        enchantedMobClasses.add(Necromancer.class);
+        enchantedMobClasses.add(Pyromancer.class);
+        enchantedMobClasses.add(Warlock.class);
     }
 
     private void initializeListeners() {

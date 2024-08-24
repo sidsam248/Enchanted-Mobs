@@ -1,3 +1,4 @@
+me\sidsam\com\enchanted_mobs\abilities\Vanish$1.class
 me\sidsam\com\enchanted_mobs\abilities\DeathMark$2.class
 me\sidsam\com\enchanted_mobs\abilities\BlazeShield$2.class
 me\sidsam\com\enchanted_mobs\abilities\FireNova.class
@@ -8,6 +9,7 @@ me\sidsam\com\enchanted_mobs\abilities\GroundSmash$1.class
 me\sidsam\com\enchanted_mobs\entities\Warlock.class
 me\sidsam\com\enchanted_mobs\abilities\DarkBolt.class
 me\sidsam\com\enchanted_mobs\abilities\SummonMinions.class
+me\sidsam\com\enchanted_mobs\abilities\ShadowStep.class
 me\sidsam\com\enchanted_mobs\abilities\SoulHarvest$1.class
 me\sidsam\com\enchanted_mobs\abilities\DivineShield$DivineShieldInfo.class
 me\sidsam\com\enchanted_mobs\abilities\FireNova$1.class
@@ -18,6 +20,7 @@ me\sidsam\com\enchanted_mobs\abilities\DeathMark$1.class
 me\sidsam\com\enchanted_mobs\events\MobDamageListener.class
 me\sidsam\com\enchanted_mobs\entities\EnchantedMob$1.class
 me\sidsam\com\enchanted_mobs\events\MobSpawnListener.class
+me\sidsam\com\enchanted_mobs\abilities\Backstab.class
 me\sidsam\com\enchanted_mobs\abilities\LifeDrain.class
 me\sidsam\com\enchanted_mobs\abilities\Radiance$1.class
 me\sidsam\com\enchanted_mobs\abilities\DivineShield.class
@@ -34,3 +37,4 @@ me\sidsam\com\enchanted_mobs\abilities\FlameBurst.class
 me\sidsam\com\enchanted_mobs\abilities\Radiance.class
 me\sidsam\com\enchanted_mobs\abilities\Frenzy.class
 me\sidsam\com\enchanted_mobs\abilities\BlazeShield.class
+me\sidsam\com\enchanted_mobs\abilities\Vanish.class

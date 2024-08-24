@@ -18,7 +18,7 @@ public class MobSpawnListener implements Listener {
                 return;
             }
             // Add a 20% chance to enchant the mob
-            if (Math.random() > 1) return;
+            if (Math.random() > 0.2) return;
 
             int randomMobClassIndex = (int) (Math.random() * Main.getEnchantedMobClasses().size()); // Random mob class from list
             int level = (int) (Math.random() * 5) + 1; // Random level from 1-5
