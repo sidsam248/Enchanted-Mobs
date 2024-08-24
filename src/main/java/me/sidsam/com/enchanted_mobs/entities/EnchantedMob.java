@@ -50,14 +50,31 @@ public abstract class EnchantedMob {
 
         if (playersInRange.isEmpty()) return;
 
+        if (entity.getHealth() < 1) {
+            entity.remove();
+            return;
+        }
+
         // Get the nearest player
         Player nearestPlayer = playersInRange.stream()
                 .min((p1, p2) -> Double.compare(p1.getLocation().distance(entity.getLocation()), p2.getLocation().distance(entity.getLocation())))
                 .orElse(null);
 
-        // Select a random ability that is not on cooldown
+        // Get all passive abilities
+        List<Ability> availablePassiveAbilities = abilities.stream()
+                .filter(Ability::isPassive)
+                .toList();
+
+        if (!availablePassiveAbilities.isEmpty()) {
+            availablePassiveAbilities.forEach(ability -> {
+                ability.useAbility(entity, nearestPlayer, level);
+            });
+        }
+
+        // Select a random ability that is not on cooldown and is not a passive ability
         List<Ability> availableAbilities = abilities.stream()
-                .filter(a -> System.currentTimeMillis() >= a.getLastUsedTime() + a.getCooldown() * 1000L)
+                .filter(ability -> System.currentTimeMillis() >= ability.getLastUsedTime() + ability.getCooldown() * 1000L)
+                .filter(a -> !a.isPassive())
                 .toList();
 
         if (!availableAbilities.isEmpty()) {

@@ -7,11 +7,17 @@ public abstract class Ability {
     private final String name;
     private final int cooldown; // in seconds
     private long lastUsedTime;
+    private boolean isPassive = false;
 
     public Ability(String name, int cooldown) {
+        this(name, cooldown, false);
+    }
+
+    public Ability(String name, int cooldown, boolean isPassive) {
         this.name = name;
         this.cooldown = cooldown;
         this.lastUsedTime = 0;
+        this.isPassive = isPassive;
     }
 
     public void useAbility(LivingEntity caster, LivingEntity target, int level) {
@@ -39,5 +45,9 @@ public abstract class Ability {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isPassive() {
+        return isPassive;
     }
 }

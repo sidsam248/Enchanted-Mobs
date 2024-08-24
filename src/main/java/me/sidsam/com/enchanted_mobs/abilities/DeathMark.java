@@ -42,11 +42,10 @@ public class DeathMark extends Ability {
             @Override
             public void run() {
                 if (target == null || target.isDead() || caster.isDead() || ticksPassed > duration) {
-                    cancel();
+                    cancel(); // Stop the effect if the duration ends or the target dies
                     return;
                 }
                 target.damage(0.5 * level, caster);
-                target.getWorld().spawnParticle(Particle.SMOKE, target.getLocation().add(0, 1, 0), 20, 0.5, 1, 0.5, 0.1);
                 ticksPassed++;
             }
         }.runTaskTimer(Main.getPlugin(), 0L, 20L);
@@ -58,7 +57,7 @@ public class DeathMark extends Ability {
 
             @Override
             public void run() {
-                if (ticksPassed >= duration || target.isDead() || caster.isDead()) {
+                if (target == null || target.isDead() || caster.isDead() || ticksPassed > duration) {
                     cancel(); // Stop the effect if the duration ends or the target dies
                     return;
                 }

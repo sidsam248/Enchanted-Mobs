@@ -9,13 +9,18 @@ me\sidsam\com\enchanted_mobs\entities\Warlock.class
 me\sidsam\com\enchanted_mobs\abilities\DarkBolt.class
 me\sidsam\com\enchanted_mobs\abilities\SummonMinions.class
 me\sidsam\com\enchanted_mobs\abilities\SoulHarvest$1.class
+me\sidsam\com\enchanted_mobs\abilities\DivineShield$DivineShieldInfo.class
 me\sidsam\com\enchanted_mobs\abilities\FireNova$1.class
 me\sidsam\com\enchanted_mobs\entities\Pyromancer.class
 me\sidsam\com\enchanted_mobs\entities\Necromancer.class
+me\sidsam\com\enchanted_mobs\abilities\HolySmite.class
 me\sidsam\com\enchanted_mobs\abilities\DeathMark$1.class
+me\sidsam\com\enchanted_mobs\events\MobDamageListener.class
 me\sidsam\com\enchanted_mobs\entities\EnchantedMob$1.class
 me\sidsam\com\enchanted_mobs\events\MobSpawnListener.class
 me\sidsam\com\enchanted_mobs\abilities\LifeDrain.class
+me\sidsam\com\enchanted_mobs\abilities\Radiance$1.class
+me\sidsam\com\enchanted_mobs\abilities\DivineShield.class
 me\sidsam\com\enchanted_mobs\abilities\BlazeShield$1.class
 me\sidsam\com\enchanted_mobs\entities\Paladin.class
 me\sidsam\com\enchanted_mobs\abilities\DeathMark.class
@@ -26,5 +31,6 @@ me\sidsam\com\enchanted_mobs\abilities\Bloodlust.class
 me\sidsam\com\enchanted_mobs\abilities\SoulHarvest.class
 me\sidsam\com\enchanted_mobs\abilities\RaiseUndead.class
 me\sidsam\com\enchanted_mobs\abilities\FlameBurst.class
+me\sidsam\com\enchanted_mobs\abilities\Radiance.class
 me\sidsam\com\enchanted_mobs\abilities\Frenzy.class
 me\sidsam\com\enchanted_mobs\abilities\BlazeShield.class

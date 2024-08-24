@@ -1,6 +1,7 @@
 package me.sidsam.com.enchanted_mobs;
 
 import me.sidsam.com.enchanted_mobs.entities.*;
+import me.sidsam.com.enchanted_mobs.events.MobDamageListener;
 import me.sidsam.com.enchanted_mobs.events.MobSpawnListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,18 +26,19 @@ public final class Main extends JavaPlugin {
 
     private void initializeMobClasses() {
         // Yet to finish
-        enchantedMobClasses.add(Assassin.class);
+//        enchantedMobClasses.add(Assassin.class);
         enchantedMobClasses.add(Paladin.class);
 
         // Finished
-        enchantedMobClasses.add(Berserker.class);
-        enchantedMobClasses.add(Necromancer.class);
-        enchantedMobClasses.add(Pyromancer.class);
-        enchantedMobClasses.add(Warlock.class);
+//        enchantedMobClasses.add(Berserker.class);
+//        enchantedMobClasses.add(Necromancer.class);
+//        enchantedMobClasses.add(Pyromancer.class);
+//        enchantedMobClasses.add(Warlock.class);
     }
 
     private void initializeListeners() {
         getServer().getPluginManager().registerEvents(new MobSpawnListener(), this);
+        getServer().getPluginManager().registerEvents(new MobDamageListener(), this);
     }
 
     public static List<Class<? extends EnchantedMob>> getEnchantedMobClasses() {
