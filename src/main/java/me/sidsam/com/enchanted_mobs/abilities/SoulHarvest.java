@@ -25,7 +25,6 @@ public class SoulHarvest extends Ability {
 
         // Start spawning orbs if not already started
         if (healingOrbs > 0) {
-            Bukkit.getLogger().info("We have Soulharvest! " + healingOrbs);
             startOrbSpawning(caster, level);
         }
     }
@@ -53,8 +52,6 @@ public class SoulHarvest extends Ability {
                 }
 
                 Location casterLocation = caster.getLocation();
-
-                Bukkit.getLogger().info("We render Soulharvest! " + healingOrbs);
 
                 // Spawn a smaller thick blob for each orb
                 for (int i = 0; i < healingOrbs; i++) {

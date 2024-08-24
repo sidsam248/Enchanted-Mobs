@@ -2,22 +2,29 @@ package me.sidsam.com.enchanted_mobs.entities;
 
 import me.sidsam.com.enchanted_mobs.Main;
 import me.sidsam.com.enchanted_mobs.abilities.Ability;
+import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Particle;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.List;
+import java.util.Objects;
 
 public abstract class EnchantedMob {
     private final String name;
     protected LivingEntity entity;
     protected int level;
     protected List<Ability> abilities;
+    private BossBar bossBar;
+    private static final double RANGE = 30.0;
 
     public EnchantedMob(String name) {
         this.name = name;
@@ -45,15 +52,10 @@ public abstract class EnchantedMob {
 
     public void useAbility() {
         List<Player> playersInRange = entity.getWorld().getEntitiesByClass(Player.class).stream()
-                .filter(player -> player.getLocation().distance(entity.getLocation()) <= 30)
+                .filter(player -> player.getLocation().distance(entity.getLocation()) <= RANGE)
                 .toList();
 
         if (playersInRange.isEmpty()) return;
-
-        if (entity.getHealth() < 1) {
-            entity.remove();
-            return;
-        }
 
         // Get the nearest player
         Player nearestPlayer = playersInRange.stream()
@@ -84,16 +86,52 @@ public abstract class EnchantedMob {
         }
     }
 
+    public void createBossBar() {
+        if (bossBar == null && this.entity != null) {
+            bossBar = Bukkit.createBossBar(
+                    this.entity.getName(),
+                    BarColor.PURPLE,
+                    BarStyle.SOLID
+            );
+        }
+        updateBossBar();
+    }
+
+    public void updateBossBar() {
+        if (bossBar != null && entity != null) {
+            double health = entity.getHealth();
+            double maxHealth = Objects.requireNonNull(entity.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue();
+            bossBar.setProgress(Math.max(0, Math.min(health / maxHealth, 1)));
+
+            for (Player player : entity.getWorld().getPlayers()) {
+                if (player.getLocation().distance(entity.getLocation()) <= RANGE) {
+                    bossBar.addPlayer(player);
+                } else {
+                    bossBar.removePlayer(player);
+                }
+            }
+        }
+    }
+
+    public void removeBossBar() {
+        if (bossBar != null) {
+            bossBar.removeAll();
+            bossBar = null;
+        }
+    }
+
     public void startLogic() {
         new BukkitRunnable() {
             @Override
             public void run() {
-                if (entity == null || entity.isDead()) {
+                if (entity == null || entity.isDead() || entity.getHealth() < 1) {
+                    removeBossBar();
                     cancel();
                     return;
                 }
                 loop();
                 useAbility();
+                updateBossBar();
             }
         }.runTaskTimer(Main.getPlugin(), 0L, 20L); // 1 second intervals
     }
@@ -103,9 +141,14 @@ public abstract class EnchantedMob {
         this.entity = entity;
         this.level = level;
         this.abilities = createAbilities();
-        AttributeInstance attribute = entity.getAttribute(Attribute.GENERIC_MAX_HEALTH);
-        assert attribute != null;
-        attribute.setBaseValue(20 + (level * 10));
+
+        AttributeInstance maxHealthAttribute = entity.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+        if (maxHealthAttribute != null) {
+            double newMaxHealth = maxHealthAttribute.getBaseValue() + (level * 10);
+            maxHealthAttribute.setBaseValue(newMaxHealth);
+            entity.setHealth(newMaxHealth);
+        }
+        createBossBar();
     }
 
     public LivingEntity getEntity() {
