@@ -4,6 +4,7 @@ import me.sidsam.com.enchanted_mobs.Main;
 import me.sidsam.com.enchanted_mobs.entities.EnchantedMob;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Monster;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
@@ -14,6 +15,9 @@ public class MobSpawnListener implements Listener {
     public void onMobSpawn(CreatureSpawnEvent event) {
         try {
             LivingEntity entity = event.getEntity();
+
+            if (!(entity instanceof Monster)) return;
+
             if (entity.hasMetadata("isMinion")) {
                 return;
             }
