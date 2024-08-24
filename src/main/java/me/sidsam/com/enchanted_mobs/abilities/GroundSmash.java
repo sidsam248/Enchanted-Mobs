@@ -27,9 +27,26 @@ public class GroundSmash extends Ability {
         caster.getWorld().getNearbyEntities(casterLocation, this.radius, this.radius, this.radius).stream()
                 .filter(e -> e instanceof LivingEntity && !e.equals(caster)) // Only target other entities
                 .forEach(entity -> {
+                    // Calculate direction
+                    Vector direction = entity.getLocation().toVector().subtract(casterLocation.toVector());
+
+                    // Check if the direction vector is not zero
+                    if (direction.lengthSquared() > 0) {
+                        direction.normalize();
+                    } else {
+                        // If entities are at the same location, push slightly upwards
+                        direction = new Vector(0, 1, 0);
+                    }
+
                     // Apply knockback
-                    Vector direction = entity.getLocation().toVector().subtract(casterLocation.toVector()).normalize();
-                    entity.setVelocity(direction.multiply(force));
+                    Vector knockback = direction.multiply(force);
+
+                    // Ensure the knockback vector has finite components
+                    knockback.setX(Double.isFinite(knockback.getX()) ? knockback.getX() : 0);
+                    knockback.setY(Double.isFinite(knockback.getY()) ? knockback.getY() : 0.5); // Default upward if NaN
+                    knockback.setZ(Double.isFinite(knockback.getZ()) ? knockback.getZ() : 0);
+
+                    entity.setVelocity(knockback);
                 });
 
         // Spawn shockwave particles
@@ -60,7 +77,6 @@ public class GroundSmash extends Ability {
                     Particle.DustOptions dustOptions = new Particle.DustOptions(Color.WHITE, 1);
                     caster.getWorld().spawnParticle(Particle.DUST, particleLocation, 5, 0.2, 0.2, 0.2, 0.05, dustOptions);
 
-                    // Optional: Play sound at the edge of the shockwave
                     caster.getWorld().playSound(particleLocation, Sound.ENTITY_IRON_GOLEM_ATTACK, 1.0f, 1.0f);
                 }
 
