@@ -135,18 +135,13 @@ public abstract class EnchantedMob {
             double maxHealth = Objects.requireNonNull(entity.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue();
             bossBar.setProgress(Math.max(0, Math.min(health / maxHealth, 1)));
 
-            List<Player> playersInRange = entity.getWorld().getEntitiesByClass(Player.class).stream()
-                    .filter(player -> player.getLocation().distance(entity.getLocation()) <= RANGE)
-                    .filter(player -> hasLineOfSight(entity, player))
-                    .toList();
-
-            playersInRange.forEach(player -> {
+            for (Player player : entity.getWorld().getPlayers()) {
                 if (player.getLocation().distance(entity.getLocation()) <= RANGE) {
                     bossBar.addPlayer(player);
                 } else {
                     bossBar.removePlayer(player);
                 }
-            });
+            }
         }
     }
 
