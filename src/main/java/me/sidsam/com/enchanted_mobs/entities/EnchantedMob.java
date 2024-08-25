@@ -2,18 +2,17 @@ package me.sidsam.com.enchanted_mobs.entities;
 
 import me.sidsam.com.enchanted_mobs.Main;
 import me.sidsam.com.enchanted_mobs.abilities.Ability;
-import org.bukkit.Bukkit;
-import org.bukkit.Color;
-import org.bukkit.Particle;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
+import org.bukkit.block.Block;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.util.BlockIterator;
 
 import java.util.List;
 import java.util.Objects;
@@ -39,6 +38,32 @@ public abstract class EnchantedMob {
         world.spawnParticle(particle, entity.getLocation().add(offsetX, offsetY, offsetZ), count);
     }
 
+    private boolean hasLineOfSight(LivingEntity entity, Player player) {
+        if (entity.hasLineOfSight(player)) {
+            return true;
+        } else {
+            // Double-check with a more precise method
+            Location entityEyes = entity.getEyeLocation();
+            Location playerEyes = player.getEyeLocation();
+            BlockIterator blockIterator = new BlockIterator(Objects.requireNonNull(entityEyes.getWorld()),
+                    entityEyes.toVector(),
+                    playerEyes.toVector().subtract(entityEyes.toVector()),
+                    0,
+                    (int) entityEyes.distance(playerEyes));
+
+            while (blockIterator.hasNext()) {
+                Block block = blockIterator.next();
+                if (block.getType().isOccluding()) {
+                    return false;
+                }
+                if (block.getLocation().distanceSquared(playerEyes) <= 1) {
+                    return true;
+                }
+            }
+            return true;
+        }
+    }
+
     protected void spawnParticles(Particle particle, int count, double offsetX, double offsetY, double offsetZ, Color color) {
         World world = entity.getWorld();
 
@@ -53,6 +78,7 @@ public abstract class EnchantedMob {
     public void useAbility() {
         List<Player> playersInRange = entity.getWorld().getEntitiesByClass(Player.class).stream()
                 .filter(player -> player.getLocation().distance(entity.getLocation()) <= RANGE)
+                .filter(player -> hasLineOfSight(entity, player))
                 .toList();
 
         if (playersInRange.isEmpty()) return;

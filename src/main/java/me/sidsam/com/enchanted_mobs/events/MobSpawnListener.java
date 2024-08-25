@@ -21,8 +21,8 @@ public class MobSpawnListener implements Listener {
             if (entity.hasMetadata("isMinion")) {
                 return;
             }
-            // Add a 20% chance to enchant the mob
-            if (Math.random() > 0.2) return;
+            // Add a 10% chance to enchant the mob
+            if (Math.random() > 0.1) return;
 
             int randomMobClassIndex = (int) (Math.random() * Main.getEnchantedMobClasses().size()); // Random mob class from list
             int level = (int) (Math.random() * 5) + 1; // Random level from 1-5
