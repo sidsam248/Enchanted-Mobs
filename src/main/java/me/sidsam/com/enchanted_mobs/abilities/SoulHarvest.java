@@ -17,7 +17,7 @@ public class SoulHarvest extends Ability {
     }
 
     @Override
-    public void performAbility(LivingEntity caster, LivingEntity target, int level) {
+    protected void performAbility(LivingEntity caster, LivingEntity target, int level) {
         // Calculate damage and create an orb
         double damage = level * 2.0;
         ((Player) target).damage(damage);

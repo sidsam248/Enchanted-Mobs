@@ -15,7 +15,7 @@ public class Frenzy extends Ability {
     }
 
     @Override
-    public void performAbility(LivingEntity caster, LivingEntity target, int level) {
+    protected void performAbility(LivingEntity caster, LivingEntity target, int level) {
         caster.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, duration, (int) speedBoost));
     }
 }

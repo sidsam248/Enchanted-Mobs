@@ -15,7 +15,7 @@ public class SummonMinions extends Ability {
     }
 
     @Override
-    public void performAbility(LivingEntity caster, LivingEntity target, int level) {
+    protected void performAbility(LivingEntity caster, LivingEntity target, int level) {
         Location casterLocation = caster.getLocation();
 
         for (int i = 0; i < 2 + (int) (Math.random() * 2 * level); i++) {

@@ -13,7 +13,7 @@ public class LifeDrain extends Ability {
     }
 
     @Override
-    public void performAbility(LivingEntity caster, LivingEntity target, int level) {
+    protected void performAbility(LivingEntity caster, LivingEntity target, int level) {
         if (target instanceof Player player) {
             // Deal damage to the player
             player.damage(4); // 2 hearts

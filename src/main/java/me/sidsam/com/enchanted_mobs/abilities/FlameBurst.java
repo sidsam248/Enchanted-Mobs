@@ -22,7 +22,7 @@ public class FlameBurst extends Ability {
     }
 
     @Override
-    public void performAbility(LivingEntity caster, LivingEntity target, int level) {
+    protected void performAbility(LivingEntity caster, LivingEntity target, int level) {
         Location casterLocation = caster.getLocation();
         World world = caster.getWorld();
 
