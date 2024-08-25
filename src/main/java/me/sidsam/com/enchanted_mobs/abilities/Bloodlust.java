@@ -11,7 +11,7 @@ public class Bloodlust extends Ability {
     private final long duration;
 
     public Bloodlust(int level) {
-        super("Bloodlust", 60);
+        super("Bloodlust", 30);
         this.strengthLevel = level;
         this.duration = 20L * 15 * level;
     }

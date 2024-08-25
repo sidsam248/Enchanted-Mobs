@@ -14,7 +14,7 @@ public class DivineShield extends Ability {
     private static final Map<UUID, DivineShieldInfo> activeShields = new HashMap<>();
 
     public DivineShield() {
-        super("Divine Shield", 60);
+        super("Divine Shield", 30);
     }
 
     @Override

@@ -11,7 +11,7 @@ import me.sidsam.com.enchanted_mobs.Main;
 public class Vanish extends Ability {
 
     public Vanish() {
-        super("Vanish", 30, false); // 30 seconds cooldown
+        super("Vanish", 15); // 15 seconds cooldown
     }
 
     @Override

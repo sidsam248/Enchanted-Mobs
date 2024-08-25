@@ -9,7 +9,7 @@ import org.bukkit.util.Vector;
 public class ShadowStep extends Ability {
 
     public ShadowStep() {
-        super("Shadow Step", 10, false); // 10 seconds cooldown
+        super("Shadow Step", 15, false); // 15 seconds cooldown
     }
 
     @Override

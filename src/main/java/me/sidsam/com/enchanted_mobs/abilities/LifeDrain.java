@@ -9,7 +9,7 @@ import java.util.Objects;
 public class LifeDrain extends Ability {
 
     public LifeDrain() {
-        super("Life Drain", 15); // 15-second cooldown
+        super("Life Drain", 20); // 20-second cooldown
     }
 
     @Override

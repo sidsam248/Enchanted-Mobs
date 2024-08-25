@@ -15,7 +15,7 @@ public class DeathMark extends Ability {
     private final int duration;
 
     public DeathMark(int level) {
-        super("Death mark", 60);
+        super("Death mark", 45);
         this.duration = 20 * 2 * level;
     }
 

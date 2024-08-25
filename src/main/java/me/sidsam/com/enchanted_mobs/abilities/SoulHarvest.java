@@ -13,7 +13,7 @@ public class SoulHarvest extends Ability {
     private int healingOrbs = 0;
 
     public SoulHarvest() {
-        super("Soul Harvest", 30); // 30-second cooldown
+        super("Soul Harvest", 15); // 15-second cooldown
     }
 
     @Override

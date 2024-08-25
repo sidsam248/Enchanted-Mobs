@@ -16,7 +16,7 @@ public class GroundSmash extends Ability {
     private final double radius;
 
     public GroundSmash(int level) {
-        super("Ground Smash", 20); // 20-second cooldown
+        super("Ground Smash", 30); // 30-second cooldown
         this.force = 0.5 * level;
         this.radius = 5.0 * level;
     }

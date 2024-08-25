@@ -16,8 +16,8 @@ public class FlameBurst extends Ability {
     private final double radius;
 
     public FlameBurst(int level) {
-        super("Flame Burst", 20); // 20-second cooldown
-        this.fireballCount = 2 * level; // Number of fireballs
+        super("Flame Burst", 30); // 20-second cooldown
+        this.fireballCount = level; // Number of fireballs
         this.radius = 15.0 * level; // radius
     }
 
@@ -39,10 +39,10 @@ public class FlameBurst extends Ability {
         int fireballCount = Math.min(nearbyEntities.size(), this.fireballCount); // Limit to the number of entities or a maximum value
 
         for (int i = 0; i < fireballCount; i++) {
-            if (i >= nearbyEntities.size()) break; // Avoid out-of-bounds
+            if (i >= nearbyEntities.size()) break;
 
             LivingEntity targetEntity = nearbyEntities.get(i);
-            Location fireballLocation = casterLocation.clone().add(0, 1, 0); // Adjust the Y-coordinate as needed
+            Location fireballLocation = casterLocation.clone().add(0, 1, 0);
 
             Fireball fireball = world.spawn(fireballLocation, Fireball.class);
             fireball.setShooter(caster);

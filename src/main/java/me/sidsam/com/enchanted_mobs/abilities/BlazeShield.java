@@ -15,7 +15,7 @@ public class BlazeShield extends Ability {
     private final long duration;
 
     public BlazeShield(int level) {
-        super("Blaze Shield", 30); // 30-second cooldown
+        super("Blaze Shield", 15); // 15-second cooldown
         this.radius = 1.0 * level; // Radius of the shield
         this.damage = 4.0 * level; // Damage per tick
         this.knockback = 0.5 * level; // Knockback strength

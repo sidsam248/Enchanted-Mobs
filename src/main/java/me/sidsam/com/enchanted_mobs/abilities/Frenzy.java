@@ -9,7 +9,7 @@ public class Frenzy extends Ability {
     private final int duration; // Duration in seconds
 
     public Frenzy(int level) {
-        super("Frenzy", 60);
+        super("Frenzy", 30);
         this.speedBoost = 2 * level;
         this.duration = 5 * 20 * level;
     }
