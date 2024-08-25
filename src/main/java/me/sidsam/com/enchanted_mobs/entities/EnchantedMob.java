@@ -23,7 +23,9 @@ public abstract class EnchantedMob {
     protected int level;
     protected List<Ability> abilities;
     private BossBar bossBar;
-    private static final double RANGE = 30.0;
+    private final double RANGE = 30.0;
+    private long useAbilityNextAt = 0;
+    private final long DEFAULT_DELAY = 1000 * 5; // 5 seconds delay
 
     public EnchantedMob(String name) {
         this.name = name;
@@ -83,6 +85,8 @@ public abstract class EnchantedMob {
 
         if (playersInRange.isEmpty()) return;
 
+        if(useAbilityNextAt > System.currentTimeMillis()) return;
+
         // Get the nearest player
         Player nearestPlayer = playersInRange.stream()
                 .min((p1, p2) -> Double.compare(p1.getLocation().distance(entity.getLocation()), p2.getLocation().distance(entity.getLocation())))
@@ -109,6 +113,8 @@ public abstract class EnchantedMob {
             Ability selectedAbility = availableAbilities.get((int) (Math.random() * availableAbilities.size()));
             // Use the selected ability
             selectedAbility.useAbility(entity, nearestPlayer, level);
+
+            useAbilityNextAt = System.currentTimeMillis() + DEFAULT_DELAY;
         }
     }
 
@@ -129,13 +135,18 @@ public abstract class EnchantedMob {
             double maxHealth = Objects.requireNonNull(entity.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue();
             bossBar.setProgress(Math.max(0, Math.min(health / maxHealth, 1)));
 
-            for (Player player : entity.getWorld().getPlayers()) {
+            List<Player> playersInRange = entity.getWorld().getEntitiesByClass(Player.class).stream()
+                    .filter(player -> player.getLocation().distance(entity.getLocation()) <= RANGE)
+                    .filter(player -> hasLineOfSight(entity, player))
+                    .toList();
+
+            playersInRange.forEach(player -> {
                 if (player.getLocation().distance(entity.getLocation()) <= RANGE) {
                     bossBar.addPlayer(player);
                 } else {
                     bossBar.removePlayer(player);
                 }
-            }
+            });
         }
     }
 
