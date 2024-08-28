@@ -2,3 +2,10 @@ name: Enchanted_Mobs
 version: '0.1'
 main: me.sidsam.com.enchanted_mobs.Main
 api-version: '1.21'
+commands:
+  emob:
+    description: Main command for the enchanted mobs plugin
+    usage: /<command> [arguments]
+    aliases: [alias1, alias2]
+    permission: enchanted_mobs.reload
+    permission-message: You don't have permission to use this command.
