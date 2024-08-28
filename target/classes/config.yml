@@ -1,0 +1,490 @@
+lootDrops:
+  - name: "Iron Sword of Sharpness"
+    material: "IRON_SWORD"
+    quantity: 1
+    lore:
+      - "A finely crafted weapon."
+    enchantments:
+      - type: "SHARPNESS"
+        level: 2
+    minLevel: 1
+    maxLevel: 2
+
+  - name: "Iron Helmet of Minor Protection"
+    material: "IRON_HELMET"
+    quantity: 1
+    lore:
+      - "Provides basic protection."
+    enchantments:
+      - type: "PROTECTION"
+        level: 2
+    minLevel: 1
+    maxLevel: 2
+
+  - name: "Iron Chestplate of Durability"
+    material: "IRON_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Sturdy and reliable."
+    enchantments:
+      - type: "UNBREAKING"
+        level: 2
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Iron Boots of Swiftness"
+    material: "IRON_BOOTS"
+    quantity: 1
+    lore:
+      - "Increases your speed."
+    enchantments:
+      - type: "SWIFT_SNEAK"
+        level: 2
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Bow of Precision"
+    material: "BOW"
+    quantity: 1
+    lore:
+      - "A well-balanced bow."
+    enchantments:
+      - type: "POWER"
+        level: 2
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Iron Pickaxe of Fortune"
+    material: "IRON_PICKAXE"
+    quantity: 1
+    lore:
+      - "Brings good luck when mining."
+    enchantments:
+      - type: "FORTUNE"
+        level: 2
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Diamond Sword of Vigor"
+    material: "DIAMOND_SWORD"
+    quantity: 1
+    lore:
+      - "A sword of great strength."
+    enchantments:
+      - type: "SHARPNESS"
+        level: 3
+    minLevel: 3
+    maxLevel: 4
+
+  - name: "Diamond Helmet of Vision"
+    material: "DIAMOND_HELMET"
+    quantity: 1
+    lore:
+      - "See through the darkness."
+    enchantments:
+      - type: "RESPIRATION"
+        level: 2
+      - type: "AQUA_AFFINITY"
+        level: 1
+    minLevel: 3
+    maxLevel: 4
+
+  - name: "Diamond Chestplate of Resilience"
+    material: "DIAMOND_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Offers great protection."
+    enchantments:
+      - type: "PROTECTION"
+        level: 3
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Bow of Fire"
+    material: "BOW"
+    quantity: 1
+    lore:
+      - "Sets your enemies ablaze."
+    enchantments:
+      - type: "FLAME"
+        level: 1
+      - type: "POWER"
+        level: 3
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Netherite Sword of Sharpness"
+    material: "NETHERITE_SWORD"
+    quantity: 1
+    lore:
+      - "A blade forged in the depths of the Nether."
+    enchantments:
+      - type: "SHARPNESS"
+        level: 4
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Netherite Helmet of Fire Resistance"
+    material: "NETHERITE_HELMET"
+    quantity: 1
+    lore:
+      - "Protects against the hottest flames."
+    enchantments:
+      - type: "FIRE_PROTECTION"
+        level: 4
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Netherite Chestplate of Unbreaking"
+    material: "NETHERITE_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Will last a lifetime."
+    enchantments:
+      - type: "UNBREAKING"
+        level: 3
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Netherite Boots of Soul Speed"
+    material: "NETHERITE_BOOTS"
+    quantity: 1
+    lore:
+      - "Glide effortlessly on soul sand."
+    enchantments:
+      - type: "SOUL_SPEED"
+        level: 3
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "EXP Bottle"
+    material: "EXPERIENCE_BOTTLE"
+    quantity: 5
+    lore:
+      - "A bottle of enchanting."
+    enchantments: []
+    minLevel: 1
+    maxLevel: 5
+
+  - name: "Diamond Sword of Fire Aspect"
+    material: "DIAMOND_SWORD"
+    quantity: 1
+    lore:
+      - "Burns with the fury of the nether."
+    enchantments:
+      - type: "FIRE_ASPECT"
+        level: 2
+      - type: "UNBREAKING"
+        level: 2
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Iron Sword of Looting"
+    material: "IRON_SWORD"
+    quantity: 1
+    lore:
+      - "Increases your bounty."
+    enchantments:
+      - type: "LOOTING"
+        level: 2
+    minLevel: 3
+    maxLevel: 4
+
+  - name: "Diamond Pickaxe of Efficiency"
+    material: "DIAMOND_PICKAXE"
+    quantity: 1
+    lore:
+      - "Cuts through stone like butter."
+    enchantments:
+      - type: "EFFICIENCY"
+        level: 4
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Netherite Axe of Power"
+    material: "NETHERITE_AXE"
+    quantity: 1
+    lore:
+      - "A weapon of great force."
+    enchantments:
+      - type: "SHARPNESS"
+        level: 4
+      - type: "EFFICIENCY"
+        level: 4
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Diamond Boots of Feather Falling"
+    material: "DIAMOND_BOOTS"
+    quantity: 1
+    lore:
+      - "Lands softly."
+    enchantments:
+      - type: "FEATHER_FALLING"
+        level: 4
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Netherite Sword of Smite"
+    material: "NETHERITE_SWORD"
+    quantity: 1
+    lore:
+      - "Banishes the undead."
+    enchantments:
+      - type: "SMITE"
+        level: 5
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Iron Helmet of Thorns"
+    material: "IRON_HELMET"
+    quantity: 1
+    lore:
+      - "Reflects damage to attackers."
+    enchantments:
+      - type: "THORNS"
+        level: 2
+    minLevel: 3
+    maxLevel: 4
+
+  - name: "Diamond Chestplate of Thorns"
+    material: "DIAMOND_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Hurts those who hurt you."
+    enchantments:
+      - type: "THORNS"
+        level: 3
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Iron Boots of Frost Walker"
+    material: "IRON_BOOTS"
+    quantity: 1
+    lore:
+      - "Walk on water."
+    enchantments:
+      - type: "FROST_WALKER"
+        level: 2
+    minLevel: 3
+    maxLevel: 4
+
+  - name: "Netherite Pickaxe of Fortune"
+    material: "NETHERITE_PICKAXE"
+    quantity: 1
+    lore:
+      - "Increases your gains."
+    enchantments:
+      - type: "FORTUNE"
+        level: 3
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Diamond Sword of Knockback"
+    material: "DIAMOND_SWORD"
+    quantity: 1
+    lore:
+      - "Sends enemies flying."
+    enchantments:
+      - type: "KNOCKBACK"
+        level: 2
+    minLevel: 3
+    maxLevel: 4
+
+  - name: "Iron Chestplate of Fire Protection"
+    material: "IRON_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Keeps you safe from flames."
+    enchantments:
+      - type: "FIRE_PROTECTION"
+        level: 3
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Netherite Helmet of Aqua Affinity"
+    material: "NETHERITE_HELMET"
+    quantity: 1
+    lore:
+      - "Mine faster underwater."
+    enchantments:
+      - type: "AQUA_AFFINITY"
+        level: 1
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Iron Sword of Bane of Arthropods"
+    material: "IRON_SWORD"
+    quantity: 1
+    lore:
+      - "Deadly against arthropods."
+    enchantments:
+      - type: "BANE_OF_ARTHROPODS"
+        level: 3
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Bow of Infinity"
+    material: "BOW"
+    quantity: 1
+    lore:
+      - "Never run out of arrows."
+    enchantments:
+      - type: "INFINITY"
+        level: 1
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Netherite Sword of Looting"
+    material: "NETHERITE_SWORD"
+    quantity: 1
+    lore:
+      - "Increases your bounty."
+    enchantments:
+      - type: "LOOTING"
+        level: 3
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Diamond Boots of Soul Speed"
+    material: "DIAMOND_BOOTS"
+    quantity: 1
+    lore:
+      - "Run faster on soul sand."
+    enchantments:
+      - type: "SOUL_SPEED"
+        level: 3
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Iron Helmet of Projectile Protection"
+    material: "IRON_HELMET"
+    quantity: 1
+    lore:
+      - "Reduces damage from projectiles."
+    enchantments:
+      - type: "PROJECTILE_PROTECTION"
+        level: 2
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Diamond Chestplate of Blast Protection"
+    material: "DIAMOND_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Protects against explosions."
+    enchantments:
+      - type: "BLAST_PROTECTION"
+        level: 4
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Iron Sword of Smite"
+    material: "IRON_SWORD"
+    quantity: 1
+    lore:
+      - "Banishes the undead."
+    enchantments:
+      - type: "SMITE"
+        level: 3
+    minLevel: 3
+    maxLevel: 4
+
+  - name: "Diamond Helmet of Respiration"
+    material: "DIAMOND_HELMET"
+    quantity: 1
+    lore:
+      - "Breathe longer underwater."
+    enchantments:
+      - type: "RESPIRATION"
+        level: 3
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Netherite Chestplate of Protection"
+    material: "NETHERITE_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Maximizes protection."
+    enchantments:
+      - type: "PROTECTION"
+        level: 4
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Netherite Sword of Fire Aspect"
+    material: "NETHERITE_SWORD"
+    quantity: 1
+    lore:
+      - "Burns with the fury of the nether."
+    enchantments:
+      - type: "FIRE_ASPECT"
+        level: 2
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Diamond Sword of Sweeping Edge"
+    material: "DIAMOND_SWORD"
+    quantity: 1
+    lore:
+      - "Strikes multiple enemies."
+    enchantments:
+      - type: "SWEEPING_EDGE"
+        level: 3
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Netherite Axe of Efficiency"
+    material: "NETHERITE_AXE"
+    quantity: 1
+    lore:
+      - "Chop wood faster."
+    enchantments:
+      - type: "EFFICIENCY"
+        level: 5
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Diamond Boots of Thorns"
+    material: "DIAMOND_BOOTS"
+    quantity: 1
+    lore:
+      - "Hurts those who hurt you."
+    enchantments:
+      - type: "THORNS"
+        level: 3
+    minLevel: 4
+    maxLevel: 5
+
+  - name: "Netherite Pickaxe of Silk Touch"
+    material: "NETHERITE_PICKAXE"
+    quantity: 1
+    lore:
+      - "Gently harvest blocks."
+    enchantments:
+      - type: "SILK_TOUCH"
+        level: 1
+    minLevel: 5
+    maxLevel: 5
+
+  - name: "Iron Chestplate of Protection"
+    material: "IRON_CHESTPLATE"
+    quantity: 1
+    lore:
+      - "Basic protection."
+    enchantments:
+      - type: "PROTECTION"
+        level: 3
+    minLevel: 2
+    maxLevel: 3
+
+  - name: "Bow of Power"
+    material: "BOW"
+    quantity: 1
+    lore:
+      - "Increases arrow damage."
+    enchantments:
+      - type: "POWER"
+        level: 4
+    minLevel: 3
+    maxLevel: 4

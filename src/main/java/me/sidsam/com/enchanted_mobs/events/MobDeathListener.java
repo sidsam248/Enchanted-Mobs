@@ -39,8 +39,6 @@ public class MobDeathListener implements Listener {
         // Select a random item
         Loot randomItem = validItems.get(new Random().nextInt(validItems.size()));
 
-        Bukkit.getLogger().info("Random item " + randomItem.getName());
-
         // Create the item stack
         ItemStack itemStack = new ItemStack(randomItem.getMaterial(), randomItem.getQuantity());
         ItemMeta meta = itemStack.getItemMeta();
