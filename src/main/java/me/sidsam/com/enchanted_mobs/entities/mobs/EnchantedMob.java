@@ -1,4 +1,4 @@
-package me.sidsam.com.enchanted_mobs.entities;
+package me.sidsam.com.enchanted_mobs.entities.mobs;
 
 import me.sidsam.com.enchanted_mobs.Main;
 import me.sidsam.com.enchanted_mobs.abilities.Ability;

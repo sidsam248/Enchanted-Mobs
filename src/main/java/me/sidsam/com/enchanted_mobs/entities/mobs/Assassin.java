@@ -1,4 +1,4 @@
-package me.sidsam.com.enchanted_mobs.entities;
+package me.sidsam.com.enchanted_mobs.entities.mobs;
 
 import me.sidsam.com.enchanted_mobs.abilities.Ability;
 import me.sidsam.com.enchanted_mobs.abilities.Backstab;
@@ -26,6 +26,9 @@ public class Assassin extends EnchantedMob {
     @Override
     public void loop() {
         tick++;
+
+        if (tick > 40)
+            tick = 0;
 
         // Assassin's Veil
         createAssassinVeil();

@@ -1,13 +1,11 @@
-package me.sidsam.com.enchanted_mobs.entities;
+package me.sidsam.com.enchanted_mobs.entities.mobs;
 
 import me.sidsam.com.enchanted_mobs.abilities.Ability;
 import me.sidsam.com.enchanted_mobs.abilities.DivineShield;
 import me.sidsam.com.enchanted_mobs.abilities.HolySmite;
 import me.sidsam.com.enchanted_mobs.abilities.Radiance;
 import org.bukkit.Color;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.Particle;
-import org.bukkit.util.Vector;
 
 import java.util.List;
 

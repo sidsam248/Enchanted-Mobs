@@ -1,13 +1,14 @@
 package me.sidsam.com.enchanted_mobs.events;
 
 import me.sidsam.com.enchanted_mobs.Main;
-import me.sidsam.com.enchanted_mobs.entities.EnchantedMob;
+import me.sidsam.com.enchanted_mobs.entities.mobs.EnchantedMob;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Monster;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.metadata.FixedMetadataValue;
 
 public class MobSpawnListener implements Listener {
 
@@ -37,6 +38,8 @@ public class MobSpawnListener implements Listener {
                 return;
             }
 
+            entity.setMetadata("isEnchanted", new FixedMetadataValue(Main.getPlugin(), true));
+            entity.setMetadata("enchantedLevel", new FixedMetadataValue(Main.getPlugin(), level));
             enchantedMob.setEntity(entity, level);
             enchantedMob.startLogic();
 

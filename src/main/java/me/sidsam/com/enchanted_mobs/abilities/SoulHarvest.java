@@ -11,6 +11,7 @@ import java.util.Objects;
 
 public class SoulHarvest extends Ability {
     private int healingOrbs = 0;
+    private boolean startedOrbSpawn = false;
 
     public SoulHarvest() {
         super("Soul Harvest", 15); // 15-second cooldown
@@ -24,18 +25,21 @@ public class SoulHarvest extends Ability {
         healingOrbs++;
 
         // Start spawning orbs if not already started
-        if (healingOrbs > 0) {
+        if (healingOrbs > 0 && !startedOrbSpawn) {
             startOrbSpawning(caster, level);
         }
     }
 
     private void startOrbSpawning(LivingEntity caster, int level) {
         World world = caster.getWorld();
+        if (startedOrbSpawn) return;
+        startedOrbSpawn = true;
 
         new BukkitRunnable() {
             @Override
             public void run() {
                 if (caster.isDead() || healingOrbs <= 0) {
+                    startedOrbSpawn = false;
                     cancel();
                     return;
                 }
@@ -47,6 +51,7 @@ public class SoulHarvest extends Ability {
                     healingOrbs -= 1;
                     if (healingOrbs <= 0) {
                         cancel();
+                        startedOrbSpawn = false;
                         return;
                     }
                 }

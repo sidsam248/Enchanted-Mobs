@@ -1,4 +1,4 @@
-package me.sidsam.com.enchanted_mobs.entities;
+package me.sidsam.com.enchanted_mobs.entities.mobs;
 
 import me.sidsam.com.enchanted_mobs.abilities.Ability;
 import me.sidsam.com.enchanted_mobs.abilities.BlazeShield;
@@ -6,7 +6,6 @@ import me.sidsam.com.enchanted_mobs.abilities.FireNova;
 import me.sidsam.com.enchanted_mobs.abilities.FlameBurst;
 import org.bukkit.Location;
 import org.bukkit.Particle;
-import org.bukkit.entity.LivingEntity;
 
 import java.util.List;
 

@@ -1,10 +1,9 @@
-package me.sidsam.com.enchanted_mobs.entities;
+package me.sidsam.com.enchanted_mobs.entities.mobs;
 
 import me.sidsam.com.enchanted_mobs.abilities.Ability;
 import me.sidsam.com.enchanted_mobs.abilities.DarkBolt;
 import me.sidsam.com.enchanted_mobs.abilities.LifeDrain;
 import me.sidsam.com.enchanted_mobs.abilities.SummonMinions;
-import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.World;
