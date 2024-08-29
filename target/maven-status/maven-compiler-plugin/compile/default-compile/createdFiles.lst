@@ -17,6 +17,7 @@ me\sidsam\com\enchanted_mobs\entities\mobs\Paladin.class
 me\sidsam\com\enchanted_mobs\abilities\HolySmite.class
 me\sidsam\com\enchanted_mobs\abilities\DeathMark$1.class
 me\sidsam\com\enchanted_mobs\events\MobDamageListener.class
+me\sidsam\com\enchanted_mobs\abilities\Frenzy$1.class
 me\sidsam\com\enchanted_mobs\entities\mobs\EnchantedMob$1.class
 me\sidsam\com\enchanted_mobs\events\MobSpawnListener.class
 me\sidsam\com\enchanted_mobs\abilities\Backstab.class
@@ -40,4 +41,5 @@ me\sidsam\com\enchanted_mobs\abilities\Radiance.class
 me\sidsam\com\enchanted_mobs\abilities\Frenzy.class
 me\sidsam\com\enchanted_mobs\events\MobDeathListener.class
 me\sidsam\com\enchanted_mobs\abilities\BlazeShield.class
+me\sidsam\com\enchanted_mobs\abilities\Bloodlust$1.class
 me\sidsam\com\enchanted_mobs\abilities\Vanish.class
