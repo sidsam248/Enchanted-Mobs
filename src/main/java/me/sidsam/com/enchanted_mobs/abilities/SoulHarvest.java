@@ -14,7 +14,7 @@ public class SoulHarvest extends Ability {
     private boolean startedOrbSpawn = false;
 
     public SoulHarvest() {
-        super("Soul Harvest", 15); // 15-second cooldown
+        super("Soul Harvest", 10); // 10-second cooldown
     }
 
     @Override

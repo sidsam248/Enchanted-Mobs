@@ -3,7 +3,6 @@ package me.sidsam.com.enchanted_mobs.abilities;
 import org.bukkit.Location;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkull;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;

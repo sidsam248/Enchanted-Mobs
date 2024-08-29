@@ -11,7 +11,7 @@ import me.sidsam.com.enchanted_mobs.Main;
 public class Vanish extends Ability {
 
     public Vanish() {
-        super("Vanish", 15); // 15 seconds cooldown
+        super("Vanish", 20); // 20 seconds cooldown
     }
 
     @Override
@@ -20,9 +20,9 @@ public class Vanish extends Ability {
         caster.getWorld().spawnParticle(Particle.LARGE_SMOKE, caster.getLocation().add(0, 1, 0), 50, 0.5, 1, 0.5, 0.05);
 
         // Apply invisibility
-        caster.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 60, 0)); // 3 seconds of invisibility
+        caster.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 20 * 3 * level, 0));
 
-        // Reappear after 3 seconds
+        // Reappear after
         new BukkitRunnable() {
             @Override
             public void run() {
@@ -39,6 +39,6 @@ public class Vanish extends Ability {
                             .forEach(e -> ((LivingEntity) e).damage(3 + level, caster));
                 }
             }
-        }.runTaskLater(Main.getPlugin(), 60L); // 3 seconds later
+        }.runTaskLater(Main.getPlugin(), 20L * 3 * level);
     }
 }

@@ -20,8 +20,8 @@ public class HolySmite extends Ability {
         caster.getWorld().strikeLightningEffect(strikeLocation);
 
         // Deal area damage
-        double damage = 5 + (level * 2); // Base damage 5, increases by 2 per level
-        double radius = 3 + (level * 0.5); // Base radius 3, increases by 0.5 per level
+        double damage = 2 + (level * 2); // Base damage 2, increases by 2 per level
+        double radius = 5 + (level * 0.5); // Base radius 5, increases by 0.5 per level
         for (Entity entity : caster.getNearbyEntities(radius, radius, radius)) {
             if (entity instanceof LivingEntity && entity != caster) {
                 ((LivingEntity) entity).damage(damage, caster);

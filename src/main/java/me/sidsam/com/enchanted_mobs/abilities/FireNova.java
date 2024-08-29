@@ -17,7 +17,6 @@ public class FireNova extends Ability {
     @Override
     protected void performAbility(LivingEntity caster, LivingEntity target, int level) {
         Location casterLocation = caster.getLocation();
-        int count = caster.getWorld().getNearbyEntities(casterLocation, this.radius, this.radius, this.radius).size();
 
         // Retrieve nearby entities
         caster.getWorld().getNearbyEntities(casterLocation, this.radius, this.radius, this.radius).stream()

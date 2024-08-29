@@ -46,7 +46,7 @@ public class DeathMark extends Ability {
                     return;
                 }
                 target.damage(0.5 * level, caster);
-                ticksPassed++;
+                ticksPassed += 20;
             }
         }.runTaskTimer(Main.getPlugin(), 0L, 20L);
     }
@@ -78,7 +78,7 @@ public class DeathMark extends Ability {
                     }
                 }
 
-                ticksPassed++;
+                ticksPassed += 2;
             }
         }.runTaskTimer(Main.getPlugin(), 0L, 2L); // Runs every 2 ticks for smooth movement
     }

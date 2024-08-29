@@ -24,7 +24,7 @@ public class RaiseUndead extends Ability {
 
         // Summon zombies
         for (int i = 0; i < level; i++) {
-            Location spawnLoc = getRandomSpawnLocation(location, 3);
+            Location spawnLoc = getRandomSpawnLocation(location, 5);
             Objects.requireNonNull(spawnLoc.getWorld()).spawn(spawnLoc, Zombie.class, zombieEntity -> {
                 zombieEntity.setMetadata("isMinion", new FixedMetadataValue(Main.getPlugin(), true));
                 zombieEntity.setCustomName("Undead ");
@@ -33,7 +33,7 @@ public class RaiseUndead extends Ability {
 
         // Summon skeletons
         for (int i = 0; i < level; i++) {
-            Location spawnLoc = getRandomSpawnLocation(location, 3);
+            Location spawnLoc = getRandomSpawnLocation(location, 5);
             Objects.requireNonNull(spawnLoc.getWorld()).spawn(spawnLoc, Skeleton.class, skeletonEntity -> {
                 skeletonEntity.setMetadata("isMinion", new FixedMetadataValue(Main.getPlugin(), true));
                 skeletonEntity.setCustomName("Skeletal Archer");

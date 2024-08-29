@@ -6,6 +6,7 @@ import org.bukkit.Particle;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import me.sidsam.com.enchanted_mobs.Main;
 
@@ -45,7 +46,7 @@ public class Radiance extends Ability {
         double radius = 5 + (level * 0.5); // Base radius 5, increases by 0.5 per level
 
         for (Entity entity : caster.getNearbyEntities(radius, radius, radius)) {
-            if (entity instanceof LivingEntity livingEntity && !livingEntity.equals(caster) && !livingEntity.equals(target)) {
+            if (entity instanceof LivingEntity livingEntity && !livingEntity.equals(caster) && !(livingEntity instanceof Player)) {
                 healEntity(livingEntity, healAmount);
             }
         }

@@ -11,7 +11,7 @@ import java.util.Objects;
 public class SummonMinions extends Ability {
 
     public SummonMinions() {
-        super("Summon Minions", 45);
+        super("Summon Minions", 30);
     }
 
     @Override
