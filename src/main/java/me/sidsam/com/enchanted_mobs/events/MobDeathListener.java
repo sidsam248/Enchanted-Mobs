@@ -32,8 +32,6 @@ public class MobDeathListener implements Listener {
                 .filter(item -> level >= item.getMinLevel() && level <= item.getMaxLevel())
                 .toList();
 
-        Bukkit.getLogger().info(validItems.toString());
-
         if (validItems.isEmpty()) return;
 
         // Select a random item

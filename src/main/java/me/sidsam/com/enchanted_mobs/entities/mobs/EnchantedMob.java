@@ -10,6 +10,7 @@ import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.BlockIterator;
@@ -25,7 +26,7 @@ public abstract class EnchantedMob {
     private BossBar bossBar;
     private final double RANGE = 30.0;
     private long useAbilityNextAt = 0;
-    private final long DEFAULT_DELAY = 1000 * 5; // 5 seconds delay
+    private final long DEFAULT_DELAY = 1000 * 2; // 2 seconds delay
 
     public EnchantedMob(String name) {
         this.name = name;
@@ -85,8 +86,6 @@ public abstract class EnchantedMob {
 
         if (playersInRange.isEmpty()) return;
 
-        if(useAbilityNextAt > System.currentTimeMillis()) return;
-
         // Get the nearest player
         Player nearestPlayer = playersInRange.stream()
                 .min((p1, p2) -> Double.compare(p1.getLocation().distance(entity.getLocation()), p2.getLocation().distance(entity.getLocation())))
@@ -102,6 +101,10 @@ public abstract class EnchantedMob {
                 ability.useAbility(entity, nearestPlayer, level);
             });
         }
+
+        ((Monster) entity).setTarget(nearestPlayer);
+
+        if (useAbilityNextAt > System.currentTimeMillis()) return;
 
         // Select a random ability that is not on cooldown and is not a passive ability
         List<Ability> availableAbilities = abilities.stream()
@@ -156,8 +159,9 @@ public abstract class EnchantedMob {
         new BukkitRunnable() {
             @Override
             public void run() {
-                if (entity == null || entity.isDead() || entity.getHealth() < 1) {
+                if (entity == null || entity.isDead()) {
                     removeBossBar();
+                    entity.remove();
                     cancel();
                     return;
                 }
