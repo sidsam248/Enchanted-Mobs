@@ -14,7 +14,7 @@ Enchanted Mobs is a custom Minecraft plugin designed to add RPG-style mobs with 
   - **Paladin (Melee/Support)**
   - **Assassin (Melee)**
 
-- **20% Chance of Transformation**: Every time a regular mob spawns (e.g., Zombie, Skeleton), it has a 20% chance to turn into one of the custom enchanted mobs.
+- **10% Chance of Transformation**: Every time a regular mob spawns (e.g., Zombie, Skeleton), it has a 20% chance to turn into one of the custom enchanted mobs.
 
 - **Custom Abilities**: Each enchanted mob comes with a set of abilities and custom particle effects that enhance gameplay.
 
